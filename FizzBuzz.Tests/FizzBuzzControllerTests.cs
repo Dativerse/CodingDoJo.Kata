@@ -1,4 +1,6 @@
-﻿namespace FizzBuzz.Tests;
+﻿using FizzBuzz.Controllers;
+
+namespace FizzBuzz.Tests;
 
 public class FizzBuzzControllerTests
 {
@@ -8,8 +10,11 @@ public class FizzBuzzControllerTests
     }
 
     [Test]
-    public void Test1()
+    public void Fizz_When_Divided_By_Three()
     {
-        Assert.Pass();
+        var controller = new FizzBuzzController();
+        var result = controller.Index(3);
+
+        Assert.That(result, Is.EqualTo("1\n2\nFizz"));
     }
 }
