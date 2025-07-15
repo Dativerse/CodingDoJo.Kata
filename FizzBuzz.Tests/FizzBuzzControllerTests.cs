@@ -15,6 +15,6 @@ public class FizzBuzzControllerTests
         var controller = new FizzBuzzController();
         var result = controller.Index(3);
 
-        Assert.That(result, Is.EqualTo("1\n2\nFizz"));
+        Assert.That(result, Is.EqualTo("1\r\n2\r\nFizz"));
     }
 }
