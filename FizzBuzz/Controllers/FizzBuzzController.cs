@@ -1,9 +1,12 @@
 
 using FizzBuzz.Domains;
+using Microsoft.AspNetCore.Mvc;
 
 namespace FizzBuzz.Controllers;
 
-public class FizzBuzzController
+[ApiController]
+[Route("api/[controller]")]
+public class FizzBuzzController : ControllerBase
 {
     public string Index(int size)
     {
