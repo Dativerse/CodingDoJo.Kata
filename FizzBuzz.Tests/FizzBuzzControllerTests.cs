@@ -1,6 +1,6 @@
 ﻿namespace FizzBuzz.Tests;
 
-public class Tests
+public class FizzBuzzControllerTests
 {
     [SetUp]
     public void Setup()

@@ -1,6 +1,6 @@
 @FizzBuzz_HostAddress = http://localhost:5119
 
-GET {{FizzBuzz_HostAddress}}/weatherforecast/
+GET {{FizzBuzz_HostAddress}}/api/FizzBuzz?Size=100
 Accept: application/json
 
 ###
