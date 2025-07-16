@@ -36,7 +36,10 @@ public class BowlingControllerTest
         Assert.That(result, Is.EqualTo(expectedScore));
     }
     
+    [Theory]
     [TestCase("X X X X X X X X X 5-", 255, Description = "All strike frames and normal in final")]
+    [TestCase("X X X X X X X X 45 5-", 237, Description = "All strike frames and normal in final")]
+    [TestCase("X X 45 X X X X X 45 5-", 199, Description = "All strike frames and normal in final")]
     public void CalculateScore_WithStrikeFrames_ReturnsExpectedScore(string frames, int expectedScore)
     {
         // Act

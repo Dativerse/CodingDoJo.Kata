@@ -5,6 +5,7 @@ public class Frame
     private int _firstRollScore { get; }
 
     private int _secondRollScore { get; }
+    
     public FrameType FrameType { get; set; }
 
     public Frame(string rawFrame)
@@ -13,23 +14,26 @@ public class Frame
         {
             FrameType = FrameType.Spare;
         }
+
+        if (rawFrame.Contains('X'))
+        {
+            FrameType = FrameType.Strike;
+        }
         
         _firstRollScore = ParseScore(rawFrame.Substring(0, 1));
 
-        _secondRollScore = ParseScore(rawFrame.Substring(1, 1));
+        _secondRollScore = rawFrame.Length < 2 ? 0: ParseScore(rawFrame.Substring(1, 1));
     }
 
     private int ParseScore(string rawScore)
     {
-        switch (rawScore)
+        return rawScore switch
         {
-            case "-"://Miss
-                return 0;
-            case "/"://Spare
-                return 10 - _firstRollScore;
-            default:
-                return int.Parse(rawScore);
-        }
+            "-" => 0,
+            "X" => 10,
+            "/" => 10 - _firstRollScore,
+            _ => int.Parse(rawScore)
+        };
     }
 
     public int GetScore()
@@ -38,6 +42,7 @@ public class Frame
     }
 
     public int FirstScore => _firstRollScore;
+    public int SecondScore => _secondRollScore;
 }
 
 public enum FrameType

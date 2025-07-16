@@ -18,6 +18,19 @@ public class BowlingGame(string rawFrames)
                 finalResult += 10;
                 finalResult += _frames[i + 1].FirstScore;
             }
+            else if (_frames[i].FrameType is FrameType.Strike)
+            {
+                finalResult += 10;
+                finalResult += _frames[i + 1].FirstScore;
+                if (_frames[i + 1].FrameType is FrameType.Strike)
+                {
+                    finalResult += _frames[i + 2].FirstScore;
+                }
+                else
+                {
+                    finalResult += _frames[i + 1].SecondScore;
+                }
+            }
             else
             {
                 finalResult += _frames[i].GetScore();
