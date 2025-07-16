@@ -1,6 +1,4 @@
 ﻿using Bowling.Controllers;
-using Microsoft.VisualStudio.TestPlatform.ObjectModel;
-using NUnit.Framework.Constraints;
 
 namespace BowlingTests;
 
@@ -14,11 +12,18 @@ public class BowlingControllerTest
         _controller = new BowlingGameController();
     }
 
-    [Test]
-    public void normal_when_34_before_normal_frame()
+   
+    [Theory]
+    [TestCase("54 45 45 45 45 45 45 45 45 45", 90, Description = "All normal frames")]
+    [TestCase("9- 9- 81 9- 9- 9- 9- 9- 9- 9-", 90, Description = "All frames with 9 and miss")]
+    public void CalculateScore_WithNormalFrames_ReturnsExpectedScore(string frames, int expectedScore)
     {
-        var result = _controller.Calculate("45 45 45 45 45 45 45 45 45 45");
+        // Act
+        var result = _controller.Calculate(frames);
         
-        Assert.That(result, Is.EqualTo(90));
+        // Assert
+        Assert.That(result, Is.EqualTo(expectedScore));
     }
+
+    
 }
