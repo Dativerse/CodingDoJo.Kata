@@ -35,6 +35,14 @@ public class BowlingControllerTest
         // Assert
         Assert.That(result, Is.EqualTo(expectedScore));
     }
-
     
+    [TestCase("X X X X X X X X X 5-", 255, Description = "All strike frames and normal in final")]
+    public void CalculateScore_WithStrikeFrames_ReturnsExpectedScore(string frames, int expectedScore)
+    {
+        // Act
+        var result = _controller.Calculate(frames);
+        
+        // Assert
+        Assert.That(result, Is.EqualTo(expectedScore));
+    }
 }
