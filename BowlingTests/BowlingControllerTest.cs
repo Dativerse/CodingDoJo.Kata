@@ -1,4 +1,8 @@
-﻿namespace BowlingTests;
+﻿using Bowling.Controllers;
+using Microsoft.VisualStudio.TestPlatform.ObjectModel;
+using NUnit.Framework.Constraints;
+
+namespace BowlingTests;
 
 public class BowlingControllerTest
 {
@@ -10,18 +14,9 @@ public class BowlingControllerTest
     [Test]
     public void normal_when_34_before_normal_frame()
     {
-        var service = new BowlingCalculatorService();
-        var result = service.Calculate("45 45 45 45 45 45 45 45 45 45");
+        var controller = new BowlingGameController();
+        var result = controller.Calculate("45 45 45 45 45 45 45 45 45 45");
         
         Assert.That(result, Is.EqualTo(90));
-    }
-    
-}
-
-public class BowlingCalculatorService
-{
-    public int Calculate(string rawFrames)
-    {
-        return 90;
     }
 }
