@@ -26,6 +26,7 @@ public class BowlingControllerTest
     
     [Theory]
     [TestCase("5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5-", 140, Description = "All spare frames and normal in final")]
+    [TestCase("5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 54 5-", 134, Description = "All spare frames and normal in final")]
     public void CalculateScore_WithSpareFrames_ReturnsExpectedScore(string frames, int expectedScore)
     {
         // Act

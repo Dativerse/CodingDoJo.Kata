@@ -10,11 +10,20 @@ public class BowlingGame(string rawFrames)
     public int GetGameResult()
     {
         var finalResult = 0;
-        foreach (var frame in _frames)
+
+        for (var i = 0; i < _frames.Count; i++)
         {
-            finalResult += frame.GetScore();
+            if (_frames[i].FrameType is FrameType.Spare)
+            {
+                finalResult += 10;
+                finalResult += _frames[i + 1].FirstScore;
+            }
+            else
+            {
+                finalResult += _frames[i].GetScore();
+            }
         }
-        
+
         return finalResult;
     }
 }
