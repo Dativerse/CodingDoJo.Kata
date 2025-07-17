@@ -22,7 +22,7 @@ public class BowlingGame(string rawFrames)
                 {
                     finalResult += 10;
                     finalResult += _frames[i + 1].FirstScore;
-                    if (_frames[i + 1].FrameType is FrameType.Strike)
+                    if (_frames[i + 1].SecondScore == 0)
                     {
                         finalResult += _frames[i + 2].FirstScore;
                         break;

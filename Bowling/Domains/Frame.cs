@@ -24,7 +24,7 @@ public class Frame
         
         _firstRollScore = ParseScore(rawFrame.Substring(0, 1));
 
-        _secondRollScore = rawFrame.Length < 2 ? 0: ParseScore(rawFrame.Substring(1, 1));
+        _secondRollScore = rawFrame.Length < 2 ? 0 : ParseScore(rawFrame.Substring(1, 1));
         
         _thirdRollScore = rawFrame.Length < 3 ? 0 : ParseScore(rawFrame.Substring(2, 1));
     }
