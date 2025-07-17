@@ -21,6 +21,7 @@ public class BowlingControllerTest
     [TestCase("5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 54 5/5", 144, Description = "Spare frame in final with normal frame behind")]
     [TestCase("5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/ 5/5", 150, Description = "All spare frames")]
     [TestCase("X X X X X X X X X XXX", 300, Description = "All strike frames")]
+    [TestCase("X X X 5- X X X X X XXX", 255, Description = "All strike frames with miss in the middle")]
     
     public void CalculateScore_WithFrames_ReturnsExpectedScore(string frames, int expectedScore)
     {
