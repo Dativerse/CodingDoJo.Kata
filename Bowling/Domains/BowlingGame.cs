@@ -11,7 +11,7 @@ public class BowlingGame(string rawFrames)
     {
         var finalResult = 0;
 
-        for (var i = 0; i < _frames.Count; i++)
+        for (var i = 0; i < _frames.Count - 1; i++)
         {
             switch (_frames[i].FrameType)
             {
@@ -37,6 +37,8 @@ public class BowlingGame(string rawFrames)
                     break;
             }
         }
+        
+        finalResult += _frames.Last().GetScore();
 
         return finalResult;
     }
