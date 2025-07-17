@@ -13,27 +13,28 @@ public class BowlingGame(string rawFrames)
 
         for (var i = 0; i < _frames.Count; i++)
         {
-            if (_frames[i].FrameType is FrameType.Spare)
+            switch (_frames[i].FrameType)
             {
-                finalResult += 10;
-                finalResult += _frames[i + 1].FirstScore;
-            }
-            else if (_frames[i].FrameType is FrameType.Strike)
-            {
-                finalResult += 10;
-                finalResult += _frames[i + 1].FirstScore;
-                if (_frames[i + 1].FrameType is FrameType.Strike)
+                case FrameType.Spare:
+                    finalResult += 10 + _frames[i + 1].FirstScore;
+                    break;
+                case FrameType.Strike:
                 {
-                    finalResult += _frames[i + 2].FirstScore;
-                }
-                else
-                {
+                    finalResult += 10;
+                    finalResult += _frames[i + 1].FirstScore;
+                    if (_frames[i + 1].FrameType is FrameType.Strike)
+                    {
+                        finalResult += _frames[i + 2].FirstScore;
+                        break;
+                    }
+                    
                     finalResult += _frames[i + 1].SecondScore;
+                    break;
                 }
-            }
-            else
-            {
-                finalResult += _frames[i].GetScore();
+                case FrameType.Normal:
+                default:
+                    finalResult += _frames[i].GetScore();
+                    break;
             }
         }
 
