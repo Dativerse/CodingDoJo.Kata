@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidSudokuTests", "ValidSu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductsOfArrayExceptSelf", "ProductsOfArrayExceptSelf\ProductsOfArrayExceptSelf.csproj", "{B2188703-9BEC-48C0-8E34-63480C77B383}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BestTimeToBuySellStockTests", "BestTimeToBuySellStockTests\BestTimeToBuySellStockTests.csproj", "{122F3DE1-4909-468B-91A4-7C79FDB8BB37}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -145,6 +147,18 @@ Global
 		{B2188703-9BEC-48C0-8E34-63480C77B383}.Release|x64.Build.0 = Release|Any CPU
 		{B2188703-9BEC-48C0-8E34-63480C77B383}.Release|x86.ActiveCfg = Release|Any CPU
 		{B2188703-9BEC-48C0-8E34-63480C77B383}.Release|x86.Build.0 = Release|Any CPU
+		{122F3DE1-4909-468B-91A4-7C79FDB8BB37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{122F3DE1-4909-468B-91A4-7C79FDB8BB37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{122F3DE1-4909-468B-91A4-7C79FDB8BB37}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{122F3DE1-4909-468B-91A4-7C79FDB8BB37}.Debug|x64.Build.0 = Debug|Any CPU
+		{122F3DE1-4909-468B-91A4-7C79FDB8BB37}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{122F3DE1-4909-468B-91A4-7C79FDB8BB37}.Debug|x86.Build.0 = Debug|Any CPU
+		{122F3DE1-4909-468B-91A4-7C79FDB8BB37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{122F3DE1-4909-468B-91A4-7C79FDB8BB37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{122F3DE1-4909-468B-91A4-7C79FDB8BB37}.Release|x64.ActiveCfg = Release|Any CPU
+		{122F3DE1-4909-468B-91A4-7C79FDB8BB37}.Release|x64.Build.0 = Release|Any CPU
+		{122F3DE1-4909-468B-91A4-7C79FDB8BB37}.Release|x86.ActiveCfg = Release|Any CPU
+		{122F3DE1-4909-468B-91A4-7C79FDB8BB37}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -159,5 +173,6 @@ Global
 		{CB1B237F-5F3F-4CE7-8560-E2A20849CDD4} = {5DCD4554-C095-4938-B02C-8FF5BEE4A561}
 		{2A4AA4CE-A466-4362-A3B4-1F081E29C2C7} = {5DCD4554-C095-4938-B02C-8FF5BEE4A561}
 		{B2188703-9BEC-48C0-8E34-63480C77B383} = {5DCD4554-C095-4938-B02C-8FF5BEE4A561}
+		{122F3DE1-4909-468B-91A4-7C79FDB8BB37} = {5DCD4554-C095-4938-B02C-8FF5BEE4A561}
 	EndGlobalSection
 EndGlobal

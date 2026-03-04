@@ -13,7 +13,8 @@ public class ValidSudokuTests
         Assert.Pass();
     }
     
-    public bool IsValidSudoku(char[][] board) {
-        
+    public bool IsValidSudoku(char[][] board)
+    {
+        return true;
     }
 }
