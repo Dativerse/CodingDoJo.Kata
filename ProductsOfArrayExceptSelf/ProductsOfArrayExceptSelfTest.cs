@@ -26,34 +26,31 @@ public class ProductsOfArrayExceptSelfTest
 
     private int[] ProductExceptSelf(int[] nums)
     {
-        if (nums.Length <= 1) {
+        var productSize = nums.Length;
+        if (productSize <= 1)
+        {
             return nums;
         }
         
-        var leftToRight = new int[nums.Length];
-        leftToRight[0] = nums[0];
-        
-        var rightToLeft = new int[nums.Length];
-        rightToLeft[0] = nums[^1];
+        var result = new int[productSize];
+        Array.Fill(result, 1);
 
-        for (var i = 1; i < nums.Length; i++) {
-            leftToRight[i] = nums[i] * leftToRight[i - 1];
-            rightToLeft[i] = nums[nums.Length - 1 - i] * rightToLeft[i - 1];
-        }
-
-        // pre-process with item at index 0
-        var result = new int[nums.Length];
-        result[0] = rightToLeft[^2];
-        
-        // merge LeftToRight storage with RightToLeft storage
-        for (var i = 1; i < nums.Length - 1; i++)
+        result[0] = nums[0];
+        for (var i = 1; i < productSize; i++)
         {
-            result[i] = leftToRight[i - 1] * rightToLeft[rightToLeft.Length - 2 - i];
+            result[i] = result[i - 1] * nums[i];
         }
         
-        // post-process with item at last index
-        result[nums.Length - 1] = leftToRight[nums.Length - 2];
+        result[productSize - 1] = result[productSize - 2];
+        
+        var suffix = nums[productSize - 1];
+        for (var i = productSize - 2; i > 0; i--)
+        {
+            result[i] = result[i - 1] * suffix;
+            suffix = nums[i] * suffix;;
+        }
+        result[0] = suffix;
 
-        return result.ToArray();
+        return result;
     }
 }
