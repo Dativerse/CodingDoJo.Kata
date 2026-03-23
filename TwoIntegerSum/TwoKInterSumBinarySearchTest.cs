@@ -1,6 +1,6 @@
 ﻿namespace TwoIntegerSum;
 
-public class TwoKInterSumTest
+public class TwoKInterSumBinarySearchTest
 {
     [Test]
     public void have_value_when_receive_array_left()
@@ -104,7 +104,7 @@ public class TwoKInterSumTest
     [Test]
     public void have_value_when_receive_array_with_negative_middle()
     {
-        var input = ( new List<int> { -5, -2, -1, 0 }.ToArray(), -3);
+        var input = ( new List<int> { -11, -8, -2, -1, 0 }.ToArray(), -10);
         var expected = new[] { 2, 3 };
 
         var result = TwoSum(input.Item1, input.Item2);
@@ -130,24 +130,21 @@ public class TwoKInterSumTest
         var right = numbers.Length - 1;
         while (left < right)
         {
-            while (numbers[right] >= target)
+            while (numbers[left] + numbers[right] > target)
             {
                 right--;
             }
-
-            while (numbers[left] + numbers[right] > target)
+            
+            while (numbers[left] + numbers[right] < target)
             {
                 left++;
             }
 
-            if (numbers[left] + numbers[right] == target)
-            {
-                result[0] = left + 1;
-                result[1] = right + 1;
-                break;
-            }
-            left++;
-            right--;
+            if (numbers[left] + numbers[right] != target) continue;
+            
+            result[0] = left + 1;
+            result[1] = right + 1;
+            break;
         }
         
         return result;
